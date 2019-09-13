@@ -10,9 +10,6 @@ namespace CSV_compare.OpenDiaglog
 {
     class openDialog
     {
-        private Button selectButton;
-        private OpenFileDialog openFileDialog1;
-
         public String OpenFileDialogForm()
         {
             OpenFileDialog firstFile = new OpenFileDialog();

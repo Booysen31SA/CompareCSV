@@ -47,7 +47,7 @@
             // 
             // FileOneSelect
             // 
-            this.FileOneSelect.Location = new System.Drawing.Point(48, 122);
+            this.FileOneSelect.Location = new System.Drawing.Point(51, 99);
             this.FileOneSelect.Name = "FileOneSelect";
             this.FileOneSelect.Size = new System.Drawing.Size(95, 23);
             this.FileOneSelect.TabIndex = 0;
@@ -57,7 +57,7 @@
             // FileLocationOne
             // 
             this.FileLocationOne.AutoSize = true;
-            this.FileLocationOne.Location = new System.Drawing.Point(48, 171);
+            this.FileLocationOne.Location = new System.Drawing.Point(168, 103);
             this.FileLocationOne.Name = "FileLocationOne";
             this.FileLocationOne.Size = new System.Drawing.Size(111, 19);
             this.FileLocationOne.TabIndex = 1;
@@ -65,9 +65,9 @@
             // 
             // FileTwoSelect
             // 
-            this.FileTwoSelect.Location = new System.Drawing.Point(656, 122);
+            this.FileTwoSelect.Location = new System.Drawing.Point(51, 140);
             this.FileTwoSelect.Name = "FileTwoSelect";
-            this.FileTwoSelect.Size = new System.Drawing.Size(92, 23);
+            this.FileTwoSelect.Size = new System.Drawing.Size(95, 23);
             this.FileTwoSelect.TabIndex = 2;
             this.FileTwoSelect.Text = "Select File Two";
             this.FileTwoSelect.Click += new System.EventHandler(this.FileTwoSelect_Click);
@@ -75,7 +75,7 @@
             // FileLocationTwo
             // 
             this.FileLocationTwo.AutoSize = true;
-            this.FileLocationTwo.Location = new System.Drawing.Point(656, 171);
+            this.FileLocationTwo.Location = new System.Drawing.Point(168, 144);
             this.FileLocationTwo.Name = "FileLocationTwo";
             this.FileLocationTwo.Size = new System.Drawing.Size(109, 19);
             this.FileLocationTwo.TabIndex = 3;
