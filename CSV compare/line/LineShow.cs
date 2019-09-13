@@ -34,10 +34,6 @@ namespace CSV_compare.line
                     {
                         combineText += string.Format("Line {0}\r\n==========================\r\n", lineNumber);
                     }
-                    else
-                    {
-                        combineText += string.Format("No differences Found on Line {0}\r\n==========================\r\n", lineNumber);
-                    }
                 }//End of While
 
 

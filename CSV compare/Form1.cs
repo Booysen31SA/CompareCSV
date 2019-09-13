@@ -44,7 +44,6 @@ namespace CSV_compare
             LineShow showLine = new LineShow();
             LineBox.Text = showLine.CompareLine(FileLocationOne.Text, FileLocationTwo.Text);
 
-
         }
     }
 }
