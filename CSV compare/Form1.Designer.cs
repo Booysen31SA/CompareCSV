@@ -35,6 +35,9 @@
             this.FileLocationTwo = new MetroFramework.Controls.MetroLabel();
             this.Compare = new MetroFramework.Controls.MetroButton();
             this.CompareBox = new System.Windows.Forms.TextBox();
+            this.LineBox = new System.Windows.Forms.TextBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -44,7 +47,7 @@
             // 
             // FileOneSelect
             // 
-            this.FileOneSelect.Location = new System.Drawing.Point(79, 122);
+            this.FileOneSelect.Location = new System.Drawing.Point(48, 122);
             this.FileOneSelect.Name = "FileOneSelect";
             this.FileOneSelect.Size = new System.Drawing.Size(95, 23);
             this.FileOneSelect.TabIndex = 0;
@@ -54,7 +57,7 @@
             // FileLocationOne
             // 
             this.FileLocationOne.AutoSize = true;
-            this.FileLocationOne.Location = new System.Drawing.Point(79, 171);
+            this.FileLocationOne.Location = new System.Drawing.Point(48, 171);
             this.FileLocationOne.Name = "FileLocationOne";
             this.FileLocationOne.Size = new System.Drawing.Size(111, 19);
             this.FileLocationOne.TabIndex = 1;
@@ -80,7 +83,7 @@
             // 
             // Compare
             // 
-            this.Compare.Location = new System.Drawing.Point(79, 233);
+            this.Compare.Location = new System.Drawing.Point(48, 233);
             this.Compare.Name = "Compare";
             this.Compare.Size = new System.Drawing.Size(75, 23);
             this.Compare.TabIndex = 4;
@@ -89,17 +92,46 @@
             // 
             // CompareBox
             // 
-            this.CompareBox.Location = new System.Drawing.Point(79, 275);
+            this.CompareBox.Location = new System.Drawing.Point(228, 316);
             this.CompareBox.Multiline = true;
             this.CompareBox.Name = "CompareBox";
-            this.CompareBox.Size = new System.Drawing.Size(445, 413);
+            this.CompareBox.Size = new System.Drawing.Size(445, 372);
             this.CompareBox.TabIndex = 5;
+            // 
+            // LineBox
+            // 
+            this.LineBox.Location = new System.Drawing.Point(48, 316);
+            this.LineBox.Multiline = true;
+            this.LineBox.Name = "LineBox";
+            this.LineBox.Size = new System.Drawing.Size(174, 372);
+            this.LineBox.TabIndex = 6;
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(48, 294);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(95, 19);
+            this.metroLabel1.TabIndex = 7;
+            this.metroLabel1.Text = "Line Difference";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(228, 294);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(66, 19);
+            this.metroLabel2.TabIndex = 8;
+            this.metroLabel2.Text = "Summary";
             // 
             // CSV_Compare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 711);
+            this.Controls.Add(this.metroLabel2);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.LineBox);
             this.Controls.Add(this.CompareBox);
             this.Controls.Add(this.Compare);
             this.Controls.Add(this.FileLocationTwo);
@@ -109,7 +141,6 @@
             this.Name = "CSV_Compare";
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "CSV Compare";
-            this.Theme = MetroFramework.MetroThemeStyle.Default;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -125,6 +156,9 @@
         private MetroFramework.Controls.MetroLabel FileLocationTwo;
         private MetroFramework.Controls.MetroButton Compare;
         private System.Windows.Forms.TextBox CompareBox;
+        private System.Windows.Forms.TextBox LineBox;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }
 
