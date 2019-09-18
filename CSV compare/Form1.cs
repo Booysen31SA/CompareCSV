@@ -2,6 +2,8 @@
 using CSV_compare.line;
 using CSV_compare.OpenDiaglog;
 using System;
+using System.ComponentModel;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CSV_compare
@@ -38,12 +40,15 @@ namespace CSV_compare
 
         private void Compare_Click(object sender, EventArgs e)
         {
-            CompareText compare = new CompareText();
-            CompareBox.Text = compare.compareText(FileLocationOne.Text, FileLocationTwo.Text);
+            using (new PleaseWait(this.Location))
+            {
+                Thread.Sleep(1000);
+                CompareText compare = new CompareText();
+                CompareBox.Text = compare.compareText(FileLocationOne.Text, FileLocationTwo.Text);
 
-            LineShow showLine = new LineShow();
-            LineBox.Text = showLine.CompareLine(FileLocationOne.Text, FileLocationTwo.Text);
-
+                LineShow showLine = new LineShow();
+                LineBox.Text = showLine.CompareLine(FileLocationOne.Text, FileLocationTwo.Text);
+            }
         }
     }
 }

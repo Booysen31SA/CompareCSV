@@ -38,6 +38,7 @@
             this.LineBox = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -159,6 +160,7 @@
         private System.Windows.Forms.TextBox LineBox;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
