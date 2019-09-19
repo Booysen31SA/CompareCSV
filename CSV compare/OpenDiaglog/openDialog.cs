@@ -17,7 +17,7 @@ namespace CSV_compare.OpenDiaglog
             OpenFileDialog firstFile = new OpenFileDialog
             {
                 RestoreDirectory = true,
-                Filter = "csv Files (*.csv)|*.csv",
+                Filter = "csv Files (*.csv)|*.csv|txt Files(*.txt)|*.txt",
                 CheckFileExists = true,
             };
             
@@ -34,6 +34,6 @@ namespace CSV_compare.OpenDiaglog
            //     MessageBox.Show(file);
            // }
             return name;
-        }
+        }//end of method
     }
 }
