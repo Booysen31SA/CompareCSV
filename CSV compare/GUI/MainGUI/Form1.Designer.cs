@@ -39,6 +39,8 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.IsReadyText = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -125,11 +127,27 @@
             this.metroLabel2.TabIndex = 8;
             this.metroLabel2.Text = "Summary";
             // 
+            // IsReadyText
+            // 
+            this.IsReadyText.AutoSize = true;
+            this.IsReadyText.Location = new System.Drawing.Point(228, 258);
+            this.IsReadyText.Name = "IsReadyText";
+            this.IsReadyText.Size = new System.Drawing.Size(0, 0);
+            this.IsReadyText.TabIndex = 9;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.Location = new System.Drawing.Point(228, 256);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(100, 23);
+            this.metroLabel3.TabIndex = 0;
+            // 
             // CSV_Compare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 711);
+            this.ClientSize = new System.Drawing.Size(1151, 716);
+            this.Controls.Add(this.IsReadyText);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.LineBox);
@@ -161,6 +179,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private MetroFramework.Controls.MetroLabel IsReadyText;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
     }
 }
 

@@ -10,6 +10,8 @@ namespace CSV_compare
 {
     public partial class CSV_Compare : MetroFramework.Forms.MetroForm
     {
+
+        private bool IsReady = false;
         public CSV_Compare()
         {
             InitializeComponent();
@@ -29,6 +31,8 @@ namespace CSV_compare
         {
             openDialog openFirstFile = new openDialog();
             FileLocationOne.Text = openFirstFile.OpenFileDialogForm();
+            IsReady = true;
+            IsReadyText.Text = "";
         }
 
         private void FileTwoSelect_Click(object sender, EventArgs e)
@@ -36,19 +40,26 @@ namespace CSV_compare
             openDialog openFirstFile = new openDialog();
             FileLocationTwo.Text = openFirstFile.OpenFileDialogForm();
             Compare.Enabled = true;
+            IsReady = true;
+            IsReadyText.Text = "";
         }
 
         private void Compare_Click(object sender, EventArgs e)
         {
-            using (new PleaseWait(this.Location))
+            if(IsReady == true)
             {
-                Thread.Sleep(1000);
-                CompareText compare = new CompareText();
-                CompareBox.Text = compare.compareText(FileLocationOne.Text, FileLocationTwo.Text);
+                using (new PleaseWait(this.Location))
+                {
+                    Thread.Sleep(1000);
+                    CompareText compare = new CompareText();
+                    CompareBox.Text = compare.compareText(FileLocationOne.Text, FileLocationTwo.Text);
 
-                LineShow showLine = new LineShow();
-                LineBox.Text = showLine.CompareLine(FileLocationOne.Text, FileLocationTwo.Text);
+                    LineShow showLine = new LineShow();
+                    LineBox.Text = showLine.CompareLine(FileLocationOne.Text, FileLocationTwo.Text);
+                }
             }
+            else { IsReadyText.Text = "Please Change file, Its already been compared"; }
+            IsReady = false;
         }
     }
 }
