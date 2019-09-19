@@ -31,8 +31,8 @@ namespace CSV_compare.Compare
                     }
 
                     lineNumber++;
-                    var line1 = f1.ReadLine();
-                    var line2 = f2.ReadLine();
+                    var line1 = f1.ReadLine().Replace(";", "; ");
+                    var line2 = f2.ReadLine().Replace(";", "; ");
 
                     if (line1 != line2)
                     {
