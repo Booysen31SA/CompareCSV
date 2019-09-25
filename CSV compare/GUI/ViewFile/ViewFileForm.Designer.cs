@@ -32,7 +32,6 @@
             this.FilePath = new MetroFramework.Controls.MetroLabel();
             this.FileNameLabel = new MetroFramework.Controls.MetroLabel();
             this.FilePathLabel = new MetroFramework.Controls.MetroLabel();
-            this.fileText = new System.Windows.Forms.TextBox();
             this.Back = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.FileSieInfo = new MetroFramework.Controls.MetroLabel();
@@ -45,6 +44,12 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.Save = new MetroFramework.Controls.MetroButton();
+            this.FindAWordTextBox = new MetroFramework.Controls.MetroTextBox();
+            this.FindWord = new MetroFramework.Controls.MetroLabel();
+            this.Find = new MetroFramework.Controls.MetroButton();
+            this.fileText = new System.Windows.Forms.RichTextBox();
+            this.Replace = new MetroFramework.Controls.MetroButton();
+            this.ReplaceText = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // FileName
@@ -82,15 +87,6 @@
             this.FilePathLabel.Size = new System.Drawing.Size(93, 19);
             this.FilePathLabel.TabIndex = 3;
             this.FilePathLabel.Text = "File Path Label";
-            // 
-            // fileText
-            // 
-            this.fileText.Location = new System.Drawing.Point(63, 209);
-            this.fileText.Multiline = true;
-            this.fileText.Name = "fileText";
-            this.fileText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.fileText.Size = new System.Drawing.Size(476, 391);
-            this.fileText.TabIndex = 6;
             // 
             // Back
             // 
@@ -193,11 +189,70 @@
             this.Save.Text = "Save";
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
+            // FindAWordTextBox
+            // 
+            this.FindAWordTextBox.Location = new System.Drawing.Point(599, 448);
+            this.FindAWordTextBox.Name = "FindAWordTextBox";
+            this.FindAWordTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FindAWordTextBox.Size = new System.Drawing.Size(119, 23);
+            this.FindAWordTextBox.TabIndex = 18;
+            // 
+            // FindWord
+            // 
+            this.FindWord.AutoSize = true;
+            this.FindWord.Location = new System.Drawing.Point(599, 426);
+            this.FindWord.Name = "FindWord";
+            this.FindWord.Size = new System.Drawing.Size(79, 19);
+            this.FindWord.TabIndex = 19;
+            this.FindWord.Text = "Find a word";
+            // 
+            // Find
+            // 
+            this.Find.Location = new System.Drawing.Point(741, 448);
+            this.Find.Name = "Find";
+            this.Find.Size = new System.Drawing.Size(75, 23);
+            this.Find.Style = MetroFramework.MetroColorStyle.Red;
+            this.Find.TabIndex = 20;
+            this.Find.Text = "Find";
+            this.Find.Click += new System.EventHandler(this.Find_Click);
+            // 
+            // fileText
+            // 
+            this.fileText.Location = new System.Drawing.Point(63, 172);
+            this.fileText.Name = "fileText";
+            this.fileText.Size = new System.Drawing.Size(476, 414);
+            this.fileText.TabIndex = 21;
+            this.fileText.Text = "";
+            // 
+            // Replace
+            // 
+            this.Replace.Location = new System.Drawing.Point(741, 488);
+            this.Replace.Name = "Replace";
+            this.Replace.Size = new System.Drawing.Size(75, 23);
+            this.Replace.Style = MetroFramework.MetroColorStyle.Red;
+            this.Replace.TabIndex = 22;
+            this.Replace.Text = "Replace";
+            this.Replace.Click += new System.EventHandler(this.Replace_Click);
+            // 
+            // ReplaceText
+            // 
+            this.ReplaceText.Location = new System.Drawing.Point(599, 488);
+            this.ReplaceText.Name = "ReplaceText";
+            this.ReplaceText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ReplaceText.Size = new System.Drawing.Size(119, 23);
+            this.ReplaceText.TabIndex = 23;
+            // 
             // ViewFileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 623);
+            this.Controls.Add(this.ReplaceText);
+            this.Controls.Add(this.Replace);
+            this.Controls.Add(this.fileText);
+            this.Controls.Add(this.Find);
+            this.Controls.Add(this.FindWord);
+            this.Controls.Add(this.FindAWordTextBox);
             this.Controls.Add(this.Save);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.FileExtention);
@@ -209,7 +264,6 @@
             this.Controls.Add(this.FileSieInfo);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.Back);
-            this.Controls.Add(this.fileText);
             this.Controls.Add(this.FilePathLabel);
             this.Controls.Add(this.FileNameLabel);
             this.Controls.Add(this.FilePath);
@@ -228,7 +282,6 @@
         private MetroFramework.Controls.MetroLabel FilePath;
         private MetroFramework.Controls.MetroLabel FileNameLabel;
         private MetroFramework.Controls.MetroLabel FilePathLabel;
-        private System.Windows.Forms.TextBox fileText;
         private MetroFramework.Controls.MetroButton Back;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel FileSieInfo;
@@ -241,5 +294,11 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroButton Save;
+        private MetroFramework.Controls.MetroTextBox FindAWordTextBox;
+        private MetroFramework.Controls.MetroLabel FindWord;
+        private MetroFramework.Controls.MetroButton Find;
+        private System.Windows.Forms.RichTextBox fileText;
+        private MetroFramework.Controls.MetroButton Replace;
+        private MetroFramework.Controls.MetroTextBox ReplaceText;
     }
 }
