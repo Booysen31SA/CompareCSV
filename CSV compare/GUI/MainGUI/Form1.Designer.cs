@@ -41,6 +41,8 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.IsReadyText = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.ViewFileOne = new MetroFramework.Controls.MetroButton();
+            this.ViewFileTwo = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -50,7 +52,7 @@
             // 
             // FileOneSelect
             // 
-            this.FileOneSelect.Location = new System.Drawing.Point(51, 99);
+            this.FileOneSelect.Location = new System.Drawing.Point(51, 84);
             this.FileOneSelect.Name = "FileOneSelect";
             this.FileOneSelect.Size = new System.Drawing.Size(95, 23);
             this.FileOneSelect.TabIndex = 0;
@@ -60,7 +62,7 @@
             // FileLocationOne
             // 
             this.FileLocationOne.AutoSize = true;
-            this.FileLocationOne.Location = new System.Drawing.Point(168, 103);
+            this.FileLocationOne.Location = new System.Drawing.Point(168, 88);
             this.FileLocationOne.Name = "FileLocationOne";
             this.FileLocationOne.Size = new System.Drawing.Size(111, 19);
             this.FileLocationOne.TabIndex = 1;
@@ -68,7 +70,7 @@
             // 
             // FileTwoSelect
             // 
-            this.FileTwoSelect.Location = new System.Drawing.Point(51, 140);
+            this.FileTwoSelect.Location = new System.Drawing.Point(51, 128);
             this.FileTwoSelect.Name = "FileTwoSelect";
             this.FileTwoSelect.Size = new System.Drawing.Size(95, 23);
             this.FileTwoSelect.TabIndex = 2;
@@ -78,7 +80,7 @@
             // FileLocationTwo
             // 
             this.FileLocationTwo.AutoSize = true;
-            this.FileLocationTwo.Location = new System.Drawing.Point(168, 144);
+            this.FileLocationTwo.Location = new System.Drawing.Point(168, 132);
             this.FileLocationTwo.Name = "FileLocationTwo";
             this.FileLocationTwo.Size = new System.Drawing.Size(109, 19);
             this.FileLocationTwo.TabIndex = 3;
@@ -86,7 +88,7 @@
             // 
             // Compare
             // 
-            this.Compare.Location = new System.Drawing.Point(48, 233);
+            this.Compare.Location = new System.Drawing.Point(48, 235);
             this.Compare.Name = "Compare";
             this.Compare.Size = new System.Drawing.Size(75, 23);
             this.Compare.TabIndex = 4;
@@ -142,11 +144,31 @@
             this.metroLabel3.Size = new System.Drawing.Size(100, 23);
             this.metroLabel3.TabIndex = 0;
             // 
+            // ViewFileOne
+            // 
+            this.ViewFileOne.Location = new System.Drawing.Point(234, 235);
+            this.ViewFileOne.Name = "ViewFileOne";
+            this.ViewFileOne.Size = new System.Drawing.Size(83, 23);
+            this.ViewFileOne.TabIndex = 10;
+            this.ViewFileOne.Text = "View File one";
+            this.ViewFileOne.Click += new System.EventHandler(this.ViewFileOne_Click);
+            // 
+            // ViewFileTwo
+            // 
+            this.ViewFileTwo.Location = new System.Drawing.Point(323, 235);
+            this.ViewFileTwo.Name = "ViewFileTwo";
+            this.ViewFileTwo.Size = new System.Drawing.Size(83, 23);
+            this.ViewFileTwo.TabIndex = 11;
+            this.ViewFileTwo.Text = "View File two";
+            this.ViewFileTwo.Click += new System.EventHandler(this.ViewFileTwo_Click);
+            // 
             // CSV_Compare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 716);
+            this.Controls.Add(this.ViewFileTwo);
+            this.Controls.Add(this.ViewFileOne);
             this.Controls.Add(this.IsReadyText);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
@@ -181,6 +203,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private MetroFramework.Controls.MetroLabel IsReadyText;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroButton ViewFileOne;
+        private MetroFramework.Controls.MetroButton ViewFileTwo;
     }
 }
 

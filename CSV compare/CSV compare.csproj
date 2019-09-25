@@ -68,6 +68,13 @@
     <Compile Include="GUI\MainGUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ViewFile\ViewFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ViewFile\ViewFileForm.Designer.cs">
+      <DependentUpon>ViewFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="infoOnFile\forFileData.cs" />
     <Compile Include="line\LineShow.cs" />
     <Compile Include="Loading\LoadingScreen.cs">
       <SubType>Form</SubType>
@@ -75,12 +82,17 @@
     <Compile Include="Loading\LoadingScreen.Designer.cs">
       <DependentUpon>LoadingScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MD5\md5Hash.cs" />
     <Compile Include="OpenDiaglog\openDialog.cs" />
     <Compile Include="Loading\PleaseWait.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveDiaglog\SaveFile.cs" />
     <EmbeddedResource Include="GUI\MainGUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ViewFile\ViewFileForm.resx">
+      <DependentUpon>ViewFileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading\LoadingScreen.resx">
       <DependentUpon>LoadingScreen.cs</DependentUpon>
