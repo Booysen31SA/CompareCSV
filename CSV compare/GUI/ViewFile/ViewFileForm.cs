@@ -13,7 +13,7 @@ namespace CSV_compare.GUI.ViewFile
     {
         private string[] words;
         private String OldText = "";
-        private md5Hash getMd5hash = new md5Hash();
+        private readonly md5Hash getMd5hash = new md5Hash();
 
         public ViewFileForm()
         {
@@ -83,7 +83,7 @@ namespace CSV_compare.GUI.ViewFile
             }
             else
             {
-                String fileLocation = saveFile.saveFileDialog(FileNameLabel.Text);
+                String fileLocation = saveFile.SaveFileDialog(FileNameLabel.Text);
                 File.WriteAllText(fileLocation, fileText.Text);
             }
         }
@@ -99,10 +99,10 @@ namespace CSV_compare.GUI.ViewFile
             fileText.SelectionStart = 0;
             fileText.SelectAll();
             fileText.SelectionBackColor = Color.White;
-            findAWord();
+            FindAWord();
         }
 
-        private void findAWord()
+        private void FindAWord()
         {
             words = FindAWordTextBox.Text.Split(',');
             using (new PleaseWait(this.Location))

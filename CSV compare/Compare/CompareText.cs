@@ -6,7 +6,7 @@ namespace CSV_compare.Compare
 {
     class CompareText
     {
-        public String compareText(String text1, String text2)
+        public string compareText(String text1, String text2)
         {
             String combineText = "";
 

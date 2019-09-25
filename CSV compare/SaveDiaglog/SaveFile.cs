@@ -5,7 +5,7 @@ namespace CSV_compare.SaveDiaglog
 {
     class SaveFile
     {
-        public String saveFileDialog(String fileName)
+        public String SaveFileDialog(String fileName)
         {
             String location = "";
             SaveFileDialog SaveFileDialog1 = new SaveFileDialog

@@ -9,14 +9,16 @@ namespace CSV_compare
 
     public class PleaseWait : IDisposable
     {
-        private Form mSplash = new LoadingScreen();
+        private readonly Form mSplash = new LoadingScreen();
         private Point mLocation;
 
         public PleaseWait(Point location)
         {
             mLocation = location;
-            Thread t = new Thread(new ThreadStart(workerThread));
-            t.IsBackground = true;
+            Thread t = new Thread(new ThreadStart(WorkerThread))
+            {
+                IsBackground = true
+            };
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
@@ -24,14 +26,14 @@ namespace CSV_compare
         public void Dispose()
         {
 
-            mSplash.Invoke(new MethodInvoker(stopThread));
+            mSplash.Invoke(new MethodInvoker(StopThread));
 
         }
-        private void stopThread()
+        private void StopThread()
         {
             mSplash.Close();
         }
-        private void workerThread()
+        private void WorkerThread()
         {
             mSplash.StartPosition = FormStartPosition.CenterScreen;
             mSplash.Location = mLocation;
