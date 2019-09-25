@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CSV_compare.SaveDiaglog
@@ -24,7 +20,7 @@ namespace CSV_compare.SaveDiaglog
 
             if (SaveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-               location = SaveFileDialog1.FileName;
+                location = SaveFileDialog1.FileName;
             }
             return location;
         }

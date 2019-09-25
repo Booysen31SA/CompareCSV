@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CSV_compare;
+﻿using CSV_compare.infoOnFile;
 using CSV_compare.MD5;
 using CSV_compare.SaveDiaglog;
-using CSV_compare.infoOnFile;
+using System;
+using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace CSV_compare.GUI.ViewFile
 {
@@ -73,7 +66,7 @@ namespace CSV_compare.GUI.ViewFile
                 long size = file.Length;
                 FileSieInfo.Text = i.FileSize(size);
                 CreatedFile.Text = i.FileLastCreated(file.CreationTime);
-                lastMod.Text =i. LastModified(file.LastWriteTime);
+                lastMod.Text = i.LastModified(file.LastWriteTime);
                 FileExtention.Text = i.Extension(file.Extension);
             }
         }
@@ -82,16 +75,16 @@ namespace CSV_compare.GUI.ViewFile
         private void EditAndSave()
         {
             SaveFile saveFile = new SaveFile();
-            
-                String md5 = getMd5hash.CreateMD5(fileText.Text);
-                if(OldText == md5)
-                {
-                    MessageBox.Show("Nothing has Changed", "Nothing has Changed");
-                }
-                else
-                {
-                    String fileLocation = saveFile.saveFileDialog(FileNameLabel.Text);
-                    File.WriteAllText(fileLocation, fileText.Text);
+
+            String md5 = getMd5hash.CreateMD5(fileText.Text);
+            if (OldText == md5)
+            {
+                MessageBox.Show("Nothing has Changed", "Nothing has Changed");
+            }
+            else
+            {
+                String fileLocation = saveFile.saveFileDialog(FileNameLabel.Text);
+                File.WriteAllText(fileLocation, fileText.Text);
             }
         }
 

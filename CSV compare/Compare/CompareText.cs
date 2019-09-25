@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSV_compare.Compare
 {
@@ -45,7 +41,7 @@ namespace CSV_compare.Compare
                         combineText += string.Format("No differences Found on Line {0}\r\n===========================\r\n", lineNumber);
                     }
                 }//End of While
-                
+
 
                 if (!f2.EndOfStream)
                 {

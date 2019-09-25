@@ -3,8 +3,6 @@ using CSV_compare.GUI.ViewFile;
 using CSV_compare.line;
 using CSV_compare.OpenDiaglog;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -76,11 +74,11 @@ namespace CSV_compare
                 }
                 else { IsReadyText.Text = "Please Change file, Its already been compared"; }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Error\r\nPlease Retry", "Error");
             }
-            
+
         }
 
         private void ViewFileOne_Click(object sender, EventArgs e)

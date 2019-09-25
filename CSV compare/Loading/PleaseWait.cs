@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace CSV_compare
 {
 
-public class PleaseWait : IDisposable
+    public class PleaseWait : IDisposable
     {
         private Form mSplash = new LoadingScreen();
         private Point mLocation;
@@ -20,11 +20,12 @@ public class PleaseWait : IDisposable
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
+
         public void Dispose()
         {
-           
+
             mSplash.Invoke(new MethodInvoker(stopThread));
-            
+
         }
         private void stopThread()
         {
