@@ -123,7 +123,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(599, 249);
+            this.metroLabel2.Location = new System.Drawing.Point(599, 240);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(56, 19);
             this.metroLabel2.TabIndex = 10;
@@ -132,7 +132,7 @@
             // CreatedFile
             // 
             this.CreatedFile.AutoSize = true;
-            this.CreatedFile.Location = new System.Drawing.Point(697, 249);
+            this.CreatedFile.Location = new System.Drawing.Point(697, 240);
             this.CreatedFile.Name = "CreatedFile";
             this.CreatedFile.Size = new System.Drawing.Size(105, 19);
             this.CreatedFile.TabIndex = 11;
@@ -141,7 +141,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(599, 285);
+            this.metroLabel4.Location = new System.Drawing.Point(599, 270);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(88, 19);
             this.metroLabel4.TabIndex = 12;
@@ -150,7 +150,7 @@
             // lastMod
             // 
             this.lastMod.AutoSize = true;
-            this.lastMod.Location = new System.Drawing.Point(697, 285);
+            this.lastMod.Location = new System.Drawing.Point(697, 270);
             this.lastMod.Name = "lastMod";
             this.lastMod.Size = new System.Drawing.Size(88, 19);
             this.lastMod.TabIndex = 13;
@@ -159,7 +159,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(599, 322);
+            this.metroLabel3.Location = new System.Drawing.Point(599, 298);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(63, 19);
             this.metroLabel3.TabIndex = 14;
@@ -168,7 +168,7 @@
             // FileExtention
             // 
             this.FileExtention.AutoSize = true;
-            this.FileExtention.Location = new System.Drawing.Point(697, 322);
+            this.FileExtention.Location = new System.Drawing.Point(697, 298);
             this.FileExtention.Name = "FileExtention";
             this.FileExtention.Size = new System.Drawing.Size(87, 19);
             this.FileExtention.TabIndex = 15;
@@ -177,15 +177,15 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(599, 380);
+            this.metroLabel5.Location = new System.Drawing.Point(599, 338);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(155, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(88, 19);
             this.metroLabel5.TabIndex = 16;
-            this.metroLabel5.Text = "Make Changes then Save";
+            this.metroLabel5.Text = "Edit and Save";
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(599, 414);
+            this.Save.Location = new System.Drawing.Point(599, 378);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(75, 23);
             this.Save.Style = MetroFramework.MetroColorStyle.Red;
