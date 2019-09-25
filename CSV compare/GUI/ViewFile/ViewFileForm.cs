@@ -111,7 +111,7 @@ namespace CSV_compare.GUI.ViewFile
 
         private void findAWord()
         {
-            words = FindAWordTextBox.Text.Split(';');
+            words = FindAWordTextBox.Text.Split(',');
             using (new PleaseWait(this.Location))
             {
                 foreach (string word in words)

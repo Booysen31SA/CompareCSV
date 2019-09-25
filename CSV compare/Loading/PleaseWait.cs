@@ -32,7 +32,6 @@ public class PleaseWait : IDisposable
         }
         private void workerThread()
         {
-           
             mSplash.StartPosition = FormStartPosition.CenterScreen;
             mSplash.Location = mLocation;
             mSplash.TopMost = true;

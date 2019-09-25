@@ -59,20 +59,27 @@ namespace CSV_compare
 
         private void Compare_Click(object sender, EventArgs e)
         {
-            if(IsReady == true)
+            try
             {
-                using (new PleaseWait(this.Location))
+                if (IsReady == true)
                 {
-                    Thread.Sleep(1000);
-                    CompareText compare = new CompareText();
-                    CompareBox.Text = compare.compareText(FileLocationOne.Text, FileLocationTwo.Text);
+                    using (new PleaseWait(this.Location))
+                    {
+                        Thread.Sleep(1000);
+                        CompareText compare = new CompareText();
+                        CompareBox.Text = compare.compareText(FileLocationOne.Text, FileLocationTwo.Text);
 
-                    LineShow showLine = new LineShow();
-                    LineBox.Text = showLine.CompareLine(FileLocationOne.Text, FileLocationTwo.Text);
-                    IsReady = false;
+                        LineShow showLine = new LineShow();
+                        LineBox.Text = showLine.CompareLine(FileLocationOne.Text, FileLocationTwo.Text);
+                        IsReady = false;
+                    }
                 }
+                else { IsReadyText.Text = "Please Change file, Its already been compared"; }
             }
-            else { IsReadyText.Text = "Please Change file, Its already been compared"; }
+            catch(Exception)
+            {
+                MessageBox.Show("Error\r\nPlease Retry", "Error");
+            }
             
         }
 
