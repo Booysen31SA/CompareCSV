@@ -128,7 +128,7 @@ namespace CSV_compare.GUI.ViewFile
                         }
                         else
                             break;
-                        startindex += wordstartIndex + word.Length;
+                        startindex = wordstartIndex + word.Length;
                     }
                 }
             }

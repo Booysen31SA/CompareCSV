@@ -3,6 +3,8 @@ using CSV_compare.GUI.ViewFile;
 using CSV_compare.line;
 using CSV_compare.OpenDiaglog;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -22,7 +24,6 @@ namespace CSV_compare
         private void Form1_Load(object sender, EventArgs e)
         {
             Compare.Enabled = false;
-            CompareBox.ScrollBars = ScrollBars.Both;
             CompareBox.WordWrap = false;
 
             LineBox.ScrollBars = ScrollBars.Both;

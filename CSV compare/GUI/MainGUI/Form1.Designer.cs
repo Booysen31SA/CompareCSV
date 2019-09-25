@@ -34,7 +34,6 @@
             this.FileTwoSelect = new MetroFramework.Controls.MetroButton();
             this.FileLocationTwo = new MetroFramework.Controls.MetroLabel();
             this.Compare = new MetroFramework.Controls.MetroButton();
-            this.CompareBox = new System.Windows.Forms.TextBox();
             this.LineBox = new System.Windows.Forms.TextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -43,6 +42,7 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.ViewFileOne = new MetroFramework.Controls.MetroButton();
             this.ViewFileTwo = new MetroFramework.Controls.MetroButton();
+            this.CompareBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -94,14 +94,6 @@
             this.Compare.TabIndex = 4;
             this.Compare.Text = "Compare";
             this.Compare.Click += new System.EventHandler(this.Compare_Click);
-            // 
-            // CompareBox
-            // 
-            this.CompareBox.Location = new System.Drawing.Point(228, 316);
-            this.CompareBox.Multiline = true;
-            this.CompareBox.Name = "CompareBox";
-            this.CompareBox.Size = new System.Drawing.Size(445, 372);
-            this.CompareBox.TabIndex = 5;
             // 
             // LineBox
             // 
@@ -162,18 +154,26 @@
             this.ViewFileTwo.Text = "View File two";
             this.ViewFileTwo.Click += new System.EventHandler(this.ViewFileTwo_Click);
             // 
+            // CompareBox
+            // 
+            this.CompareBox.Location = new System.Drawing.Point(228, 316);
+            this.CompareBox.Name = "CompareBox";
+            this.CompareBox.Size = new System.Drawing.Size(658, 372);
+            this.CompareBox.TabIndex = 12;
+            this.CompareBox.Text = "";
+            // 
             // CSV_Compare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 716);
+            this.Controls.Add(this.CompareBox);
             this.Controls.Add(this.ViewFileTwo);
             this.Controls.Add(this.ViewFileOne);
             this.Controls.Add(this.IsReadyText);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.LineBox);
-            this.Controls.Add(this.CompareBox);
             this.Controls.Add(this.Compare);
             this.Controls.Add(this.FileLocationTwo);
             this.Controls.Add(this.FileTwoSelect);
@@ -196,7 +196,6 @@
         private MetroFramework.Controls.MetroButton FileTwoSelect;
         private MetroFramework.Controls.MetroLabel FileLocationTwo;
         private MetroFramework.Controls.MetroButton Compare;
-        private System.Windows.Forms.TextBox CompareBox;
         private System.Windows.Forms.TextBox LineBox;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
@@ -205,6 +204,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton ViewFileOne;
         private MetroFramework.Controls.MetroButton ViewFileTwo;
+        private System.Windows.Forms.RichTextBox CompareBox;
     }
 }
 
