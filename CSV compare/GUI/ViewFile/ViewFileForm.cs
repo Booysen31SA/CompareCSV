@@ -12,12 +12,13 @@ using CSV_compare;
 using CSV_compare.MD5;
 using CSV_compare.SaveDiaglog;
 using CSV_compare.infoOnFile;
+using System.Text.RegularExpressions;
 
 namespace CSV_compare.GUI.ViewFile
 {
     public partial class ViewFileForm : MetroFramework.Forms.MetroForm
     {
-
+        private string[] words;
         private String OldText = "";
         private md5Hash getMd5hash = new md5Hash();
 
@@ -98,6 +99,61 @@ namespace CSV_compare.GUI.ViewFile
         {
             EditAndSave();
             Save.BackColor = Color.LawnGreen;
+        }
+
+        private void Find_Click(object sender, EventArgs e)
+        {
+            fileText.SelectionStart = 0;
+            fileText.SelectAll();
+            fileText.SelectionBackColor = Color.White;
+            findAWord();
+        }
+
+        private void findAWord()
+        {
+            words = FindAWordTextBox.Text.Split(';');
+            using (new PleaseWait(this.Location))
+            {
+                foreach (string word in words)
+                {
+                    int startindex = 0;
+                    while (startindex < fileText.TextLength)
+                    {
+                        int wordstartIndex = fileText.Find(word, startindex, RichTextBoxFinds.None);
+                        if (wordstartIndex != -1)
+                        {
+                            fileText.SelectionStart = wordstartIndex;
+                            fileText.SelectionLength = word.Length;
+                            fileText.SelectionBackColor = Color.Yellow;
+                        }
+                        else
+                            break;
+                        startindex += wordstartIndex + word.Length;
+                    }
+                }
+            }
+        }
+
+        private void Replace_Click(object sender, EventArgs e)
+        {
+            using (new PleaseWait(this.Location))
+            {
+                if (FindAWordTextBox.Text.Length <= 0)
+                {
+                    MessageBox.Show("Please Enter a value in the find TextBox");
+                }
+                else if (ReplaceText.Text.Length <= 0)
+                {
+                    MessageBox.Show("Please Enter a value in the replace TextBox");
+
+                }
+                else
+                {
+                    String OldString = fileText.Text;
+                    String NewString = Regex.Replace(fileText.Text, FindAWordTextBox.Text, ReplaceText.Text, RegexOptions.IgnoreCase);
+                    fileText.Text = NewString;
+                }
+            }
         }
     }
 }
