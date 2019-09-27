@@ -21,7 +21,7 @@ namespace CSV_compare
         private void Form1_Load(object sender, EventArgs e)
         {
             Compare();
-            startUp();
+            StartUp();
         }
 
         private void MetroButton1_Click_1(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace CSV_compare
             Compare();
         }
 
-        private void startUp()
+        private void StartUp()
         {
             if (!ContentPanel.Controls.Contains(StartUpUserControl.Instance))
             {
