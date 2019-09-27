@@ -105,6 +105,7 @@
             this.Controls.Add(this.FileOneSelect);
             this.Name = "CSV_Compare";
             this.Resizable = false;
+            this.ShadowType = MetroFramework.Forms.MetroForm.MetroFormShadowType.DropShadow;
             this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "CSV Compare";
             this.Load += new System.EventHandler(this.Form1_Load);
