@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Threading;
-using CSV_compare.Compare;
-using CSV_compare.line;
+﻿using CSV_compare.Compare;
 using CSV_compare.GUI.ViewFile;
+using CSV_compare.line;
+using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace CSV_compare.GUI.UserControlScreens
 {
@@ -70,7 +63,7 @@ namespace CSV_compare.GUI.UserControlScreens
                         IsReady = false;
                     }
                 }
-                else { MessageBox.Show("Please Change file, Its already been compared");}
+                else { MessageBox.Show("Please Change file, Its already been compared"); }
             }
             catch (Exception)
             {

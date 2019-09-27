@@ -1,16 +1,12 @@
-﻿using CSV_compare.Compare;
-using CSV_compare.GUI.UserControlScreens;
-using CSV_compare.GUI.ViewFile;
-using CSV_compare.line;
+﻿using CSV_compare.GUI.UserControlScreens;
 using CSV_compare.OpenDiaglog;
 using System;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace CSV_compare
 {
     public partial class CSV_Compare : MetroFramework.Forms.MetroForm
-    { 
+    {
         public static String SetFilePathOne = "File One Name";
         public static String SetFilePathTwo = "File One Name";
 
