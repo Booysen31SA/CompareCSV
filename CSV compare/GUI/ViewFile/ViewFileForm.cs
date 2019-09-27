@@ -14,7 +14,7 @@ namespace CSV_compare.GUI.ViewFile
     {
         private string[] words;
         private String OldText = "";
-        private readonly md5Hash getMd5hash = new md5Hash();
+        private readonly Md5Hash getMd5hash = new Md5Hash();
 
         public ViewFileForm()
         {
