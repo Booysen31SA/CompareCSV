@@ -1,4 +1,5 @@
-﻿using CSV_compare.infoOnFile;
+﻿using CSV_compare.GUI.UserControlScreens;
+using CSV_compare.infoOnFile;
 using CSV_compare.MD5;
 using CSV_compare.SaveDiaglog;
 using System;
@@ -15,6 +16,7 @@ namespace CSV_compare.GUI.ViewFile
         private String OldText = "";
         private readonly md5Hash getMd5hash = new md5Hash();
 
+
         public ViewFileForm()
         {
             InitializeComponent();
@@ -22,8 +24,8 @@ namespace CSV_compare.GUI.ViewFile
 
         private void ViewFileForm_Load(object sender, EventArgs e)
         {
-            FilePathLabel.Text = CSV_Compare.SetFilePath;
-            FileNameLabel.Text = Path.GetFileName(CSV_Compare.SetFilePath);
+            FilePathLabel.Text = CompareUserControl.FilePathName;
+            FileNameLabel.Text = Path.GetFileName(CompareUserControl.FilePathName);
             setFileText();
             this.OldText = getMd5hash.CreateMD5(fileText.Text);
         }
@@ -31,7 +33,8 @@ namespace CSV_compare.GUI.ViewFile
         private void setFileText()
         {
             String file = "";
-            using (StreamReader f1 = new StreamReader(CSV_Compare.SetFilePath))
+            String fileName = CompareUserControl.FilePathName;
+            using (StreamReader f1 = new StreamReader(fileName))
             {
                 int lineNumber = 0;
                 using (new PleaseWait(this.Location))
@@ -62,7 +65,7 @@ namespace CSV_compare.GUI.ViewFile
             forFileData i = new forFileData();
             using (new PleaseWait(this.Location))
             {
-                FileInfo file = new FileInfo(CSV_Compare.SetFilePath);
+                FileInfo file = new FileInfo(CompareUserControl.FilePathName);
                 long size = file.Length;
                 FileSieInfo.Text = i.FileSize(size);
                 CreatedFile.Text = i.FileLastCreated(file.CreationTime);

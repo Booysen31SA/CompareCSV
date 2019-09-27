@@ -68,6 +68,18 @@
     <Compile Include="GUI\MainGUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControlScreens\CompareUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControlScreens\CompareUserControl.Designer.cs">
+      <DependentUpon>CompareUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControlScreens\StartUpUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControlScreens\StartUpUserControl.Designer.cs">
+      <DependentUpon>StartUpUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ViewFile\ViewFileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
     <Compile Include="SaveDiaglog\SaveFile.cs" />
     <EmbeddedResource Include="GUI\MainGUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControlScreens\CompareUserControl.resx">
+      <DependentUpon>CompareUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControlScreens\StartUpUserControl.resx">
+      <DependentUpon>StartUpUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ViewFile\ViewFileForm.resx">
       <DependentUpon>ViewFileForm.cs</DependentUpon>

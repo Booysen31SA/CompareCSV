@@ -33,16 +33,9 @@
             this.FileLocationOne = new MetroFramework.Controls.MetroLabel();
             this.FileTwoSelect = new MetroFramework.Controls.MetroButton();
             this.FileLocationTwo = new MetroFramework.Controls.MetroLabel();
-            this.Compare = new MetroFramework.Controls.MetroButton();
-            this.LineBox = new System.Windows.Forms.TextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.IsReadyText = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.ViewFileOne = new MetroFramework.Controls.MetroButton();
-            this.ViewFileTwo = new MetroFramework.Controls.MetroButton();
-            this.CompareBox = new System.Windows.Forms.RichTextBox();
+            this.ContentPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -86,49 +79,6 @@
             this.FileLocationTwo.TabIndex = 3;
             this.FileLocationTwo.Text = "File Two Location";
             // 
-            // Compare
-            // 
-            this.Compare.Location = new System.Drawing.Point(48, 235);
-            this.Compare.Name = "Compare";
-            this.Compare.Size = new System.Drawing.Size(75, 23);
-            this.Compare.TabIndex = 4;
-            this.Compare.Text = "Compare";
-            this.Compare.Click += new System.EventHandler(this.Compare_Click);
-            // 
-            // LineBox
-            // 
-            this.LineBox.Location = new System.Drawing.Point(48, 316);
-            this.LineBox.Multiline = true;
-            this.LineBox.Name = "LineBox";
-            this.LineBox.Size = new System.Drawing.Size(174, 372);
-            this.LineBox.TabIndex = 6;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(48, 294);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(95, 19);
-            this.metroLabel1.TabIndex = 7;
-            this.metroLabel1.Text = "Line Difference";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(228, 294);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(66, 19);
-            this.metroLabel2.TabIndex = 8;
-            this.metroLabel2.Text = "Summary";
-            // 
-            // IsReadyText
-            // 
-            this.IsReadyText.AutoSize = true;
-            this.IsReadyText.Location = new System.Drawing.Point(228, 258);
-            this.IsReadyText.Name = "IsReadyText";
-            this.IsReadyText.Size = new System.Drawing.Size(0, 0);
-            this.IsReadyText.TabIndex = 9;
-            // 
             // metroLabel3
             // 
             this.metroLabel3.Location = new System.Drawing.Point(228, 256);
@@ -136,45 +86,19 @@
             this.metroLabel3.Size = new System.Drawing.Size(100, 23);
             this.metroLabel3.TabIndex = 0;
             // 
-            // ViewFileOne
+            // ContentPanel
             // 
-            this.ViewFileOne.Location = new System.Drawing.Point(234, 235);
-            this.ViewFileOne.Name = "ViewFileOne";
-            this.ViewFileOne.Size = new System.Drawing.Size(83, 23);
-            this.ViewFileOne.TabIndex = 10;
-            this.ViewFileOne.Text = "View File one";
-            this.ViewFileOne.Click += new System.EventHandler(this.ViewFileOne_Click);
-            // 
-            // ViewFileTwo
-            // 
-            this.ViewFileTwo.Location = new System.Drawing.Point(323, 235);
-            this.ViewFileTwo.Name = "ViewFileTwo";
-            this.ViewFileTwo.Size = new System.Drawing.Size(83, 23);
-            this.ViewFileTwo.TabIndex = 11;
-            this.ViewFileTwo.Text = "View File two";
-            this.ViewFileTwo.Click += new System.EventHandler(this.ViewFileTwo_Click);
-            // 
-            // CompareBox
-            // 
-            this.CompareBox.Location = new System.Drawing.Point(228, 316);
-            this.CompareBox.Name = "CompareBox";
-            this.CompareBox.Size = new System.Drawing.Size(658, 372);
-            this.CompareBox.TabIndex = 12;
-            this.CompareBox.Text = "";
+            this.ContentPanel.Location = new System.Drawing.Point(51, 189);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(926, 500);
+            this.ContentPanel.TabIndex = 4;
             // 
             // CSV_Compare
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1151, 716);
-            this.Controls.Add(this.CompareBox);
-            this.Controls.Add(this.ViewFileTwo);
-            this.Controls.Add(this.ViewFileOne);
-            this.Controls.Add(this.IsReadyText);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.LineBox);
-            this.Controls.Add(this.Compare);
+            this.Controls.Add(this.ContentPanel);
             this.Controls.Add(this.FileLocationTwo);
             this.Controls.Add(this.FileTwoSelect);
             this.Controls.Add(this.FileLocationOne);
@@ -192,19 +116,12 @@
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private MetroFramework.Controls.MetroButton FileOneSelect;
-        private MetroFramework.Controls.MetroLabel FileLocationOne;
         private MetroFramework.Controls.MetroButton FileTwoSelect;
-        private MetroFramework.Controls.MetroLabel FileLocationTwo;
-        private MetroFramework.Controls.MetroButton Compare;
-        private System.Windows.Forms.TextBox LineBox;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private MetroFramework.Controls.MetroLabel IsReadyText;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroButton ViewFileOne;
-        private MetroFramework.Controls.MetroButton ViewFileTwo;
-        private System.Windows.Forms.RichTextBox CompareBox;
+        public MetroFramework.Controls.MetroLabel FileLocationOne;
+        public MetroFramework.Controls.MetroLabel FileLocationTwo;
+        private System.Windows.Forms.Panel ContentPanel;
     }
 }
 
