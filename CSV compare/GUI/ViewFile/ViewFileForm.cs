@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CSV_compare;
+﻿using CSV_compare.GUI.UserControlScreens;
+using CSV_compare.infoOnFile;
 using CSV_compare.MD5;
 using CSV_compare.SaveDiaglog;
-using CSV_compare.infoOnFile;
+using System;
+using System.Drawing;
+using System.IO;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace CSV_compare.GUI.ViewFile
 {
@@ -20,7 +14,7 @@ namespace CSV_compare.GUI.ViewFile
     {
         private string[] words;
         private String OldText = "";
-        private md5Hash getMd5hash = new md5Hash();
+        private readonly md5Hash getMd5hash = new md5Hash();
 
         public ViewFileForm()
         {
@@ -29,8 +23,8 @@ namespace CSV_compare.GUI.ViewFile
 
         private void ViewFileForm_Load(object sender, EventArgs e)
         {
-            FilePathLabel.Text = CSV_Compare.SetFilePath;
-            FileNameLabel.Text = Path.GetFileName(CSV_Compare.SetFilePath);
+            FilePathLabel.Text = CompareUserControl.FilePathName;
+            FileNameLabel.Text = Path.GetFileName(CompareUserControl.FilePathName);
             setFileText();
             this.OldText = getMd5hash.CreateMD5(fileText.Text);
         }
@@ -38,7 +32,8 @@ namespace CSV_compare.GUI.ViewFile
         private void setFileText()
         {
             String file = "";
-            using (StreamReader f1 = new StreamReader(CSV_Compare.SetFilePath))
+            String fileName = CompareUserControl.FilePathName;
+            using (StreamReader f1 = new StreamReader(fileName))
             {
                 int lineNumber = 0;
                 using (new PleaseWait(this.Location))
@@ -69,29 +64,12 @@ namespace CSV_compare.GUI.ViewFile
             forFileData i = new forFileData();
             using (new PleaseWait(this.Location))
             {
-                FileInfo file = new FileInfo(CSV_Compare.SetFilePath);
+                FileInfo file = new FileInfo(CompareUserControl.FilePathName);
                 long size = file.Length;
                 FileSieInfo.Text = i.FileSize(size);
                 CreatedFile.Text = i.FileLastCreated(file.CreationTime);
-                lastMod.Text =i. LastModified(file.LastWriteTime);
+                lastMod.Text = i.LastModified(file.LastWriteTime);
                 FileExtention.Text = i.Extension(file.Extension);
-            }
-        }
-
-
-        private void EditAndSave()
-        {
-            SaveFile saveFile = new SaveFile();
-            
-                String md5 = getMd5hash.CreateMD5(fileText.Text);
-                if(OldText == md5)
-                {
-                    MessageBox.Show("Nothing has Changed", "Nothing has Changed");
-                }
-                else
-                {
-                    String fileLocation = saveFile.saveFileDialog(FileNameLabel.Text);
-                    File.WriteAllText(fileLocation, fileText.Text);
             }
         }
 
@@ -101,17 +79,33 @@ namespace CSV_compare.GUI.ViewFile
             Save.BackColor = Color.LawnGreen;
         }
 
+        private void EditAndSave()
+        {
+            SaveFile saveFile = new SaveFile();
+
+            String md5 = getMd5hash.CreateMD5(fileText.Text);
+            if (OldText == md5)
+            {
+                MessageBox.Show("No changes were detected, Nothing has Changed", "Nothing has Changed");
+            }
+            else
+            {
+                String fileLocation = saveFile.SaveFileDialog(FileNameLabel.Text);
+                File.WriteAllText(fileLocation, fileText.Text);
+            }
+        }
+
         private void Find_Click(object sender, EventArgs e)
         {
             fileText.SelectionStart = 0;
             fileText.SelectAll();
             fileText.SelectionBackColor = Color.White;
-            findAWord();
+            FindAWord();
         }
 
-        private void findAWord()
+        private void FindAWord()
         {
-            words = FindAWordTextBox.Text.Split(';');
+            words = FindAWordTextBox.Text.Split(',');
             using (new PleaseWait(this.Location))
             {
                 foreach (string word in words)
@@ -128,7 +122,7 @@ namespace CSV_compare.GUI.ViewFile
                         }
                         else
                             break;
-                        startindex += wordstartIndex + word.Length;
+                        startindex = wordstartIndex + word.Length;
                     }
                 }
             }
@@ -145,7 +139,6 @@ namespace CSV_compare.GUI.ViewFile
                 else if (ReplaceText.Text.Length <= 0)
                 {
                     MessageBox.Show("Please Enter a value in the replace TextBox");
-
                 }
                 else
                 {

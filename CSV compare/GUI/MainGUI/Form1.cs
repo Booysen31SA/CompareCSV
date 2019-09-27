@@ -1,19 +1,18 @@
-﻿using CSV_compare.Compare;
-using CSV_compare.GUI.ViewFile;
-using CSV_compare.line;
+﻿using CSV_compare.GUI.UserControlScreens;
 using CSV_compare.OpenDiaglog;
 using System;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace CSV_compare
 {
     public partial class CSV_Compare : MetroFramework.Forms.MetroForm
     {
+        public static String SetFilePathOne = "File One Name";
+        public static String SetFilePathTwo = "File One Name";
 
         public static String SetFilePath = "File One Name";
+        //private CompareUserControl User = new CompareUserControl();
 
-        private bool IsReady = false;
         public CSV_Compare()
         {
             InitializeComponent();
@@ -21,73 +20,59 @@ namespace CSV_compare
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Compare.Enabled = false;
-            CompareBox.ScrollBars = ScrollBars.Both;
-            CompareBox.WordWrap = false;
-
-            LineBox.ScrollBars = ScrollBars.Both;
-            LineBox.WordWrap = false;
-
-            //view files
-            ViewFileOne.Enabled = false;
-            ViewFileOne.Visible = false;
-            ViewFileTwo.Enabled = false;
-            ViewFileTwo.Visible = false;
+            Compare();
+            StartUp();
         }
 
         private void MetroButton1_Click_1(object sender, EventArgs e)
         {
             openDialog openFirstFile = new openDialog();
             FileLocationOne.Text = openFirstFile.OpenFileDialogForm();
-            IsReady = true;
-            IsReadyText.Text = "";
-            ViewFileOne.Enabled = true;
-            ViewFileOne.Visible = true;
+            CompareUserControl.IsReady = true;
+            CompareUserControl.Instance.ViewFileOne.Enabled = true;
+            CompareUserControl.Instance.ViewFileOne.Visible = true;
+            SetFilePathOne = FileLocationOne.Text;
+            Compare();
         }
 
         private void FileTwoSelect_Click(object sender, EventArgs e)
         {
             openDialog openFirstFile = new openDialog();
             FileLocationTwo.Text = openFirstFile.OpenFileDialogForm();
-            Compare.Enabled = true;
-            IsReady = true;
-            IsReadyText.Text = "";
-            ViewFileTwo.Enabled = true;
-            ViewFileTwo.Visible = true;
+            CompareUserControl.Instance.Compare.Enabled = true;
+            CompareUserControl.IsReady = true;
+            CompareUserControl.Instance.ViewFileTwo.Enabled = true;
+            CompareUserControl.Instance.ViewFileTwo.Visible = true;
+            SetFilePathTwo = FileLocationTwo.Text;
+            Compare();
         }
 
-        private void Compare_Click(object sender, EventArgs e)
+        private void StartUp()
         {
-            if(IsReady == true)
+            if (!ContentPanel.Controls.Contains(StartUpUserControl.Instance))
             {
-                using (new PleaseWait(this.Location))
-                {
-                    Thread.Sleep(1000);
-                    CompareText compare = new CompareText();
-                    CompareBox.Text = compare.compareText(FileLocationOne.Text, FileLocationTwo.Text);
-
-                    LineShow showLine = new LineShow();
-                    LineBox.Text = showLine.CompareLine(FileLocationOne.Text, FileLocationTwo.Text);
-                    IsReady = false;
-                }
+                ContentPanel.Controls.Add(StartUpUserControl.Instance);
+                StartUpUserControl.Instance.Dock = DockStyle.Fill;
+                StartUpUserControl.Instance.BringToFront();
             }
-            else { IsReadyText.Text = "Please Change file, Its already been compared"; }
-            
+            else
+            {
+                StartUpUserControl.Instance.BringToFront();
+            }
         }
 
-        private void ViewFileOne_Click(object sender, EventArgs e)
+        private void Compare()
         {
-
-            SetFilePath = FileLocationOne.Text;
-            ViewFileForm form = new ViewFileForm();
-            form.Show();
-        }
-
-        private void ViewFileTwo_Click(object sender, EventArgs e)
-        {
-            SetFilePath = FileLocationTwo.Text;
-            ViewFileForm form = new ViewFileForm();
-            form.Show();
+            if (!ContentPanel.Controls.Contains(CompareUserControl.Instance))
+            {
+                ContentPanel.Controls.Add(CompareUserControl.Instance);
+                CompareUserControl.Instance.Dock = DockStyle.Fill;
+                CompareUserControl.Instance.BringToFront();
+            }
+            else
+            {
+                CompareUserControl.Instance.BringToFront();
+            }
         }
     }
 }

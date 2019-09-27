@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace CSV_compare.MD5
 {
-    class md5Hash
+    internal class md5Hash
     {
         public string CreateMD5(string input)
         {

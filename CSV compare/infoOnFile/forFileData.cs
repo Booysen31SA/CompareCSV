@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSV_compare.infoOnFile
 {
-    class forFileData
+    internal class forFileData
     {
         public String Extension(String extension)
         {
             String createdTime = Convert.ToString(extension);
             return createdTime;
         }
+
         public String FileLastCreated(DateTime created)
         {
             String createdTime = Convert.ToString(created);
             return createdTime;
         }
+
         public String LastModified(DateTime modified)
         {
             String createdTime = Convert.ToString(modified);

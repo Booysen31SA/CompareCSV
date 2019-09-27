@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CSV_compare.line
 {
-    class LineShow
+    internal class LineShow
     {
         public String CompareLine(String text1, String text2)
         {
@@ -16,7 +12,6 @@ namespace CSV_compare.line
             using (StreamReader f1 = new StreamReader(text1))
             using (StreamReader f2 = new StreamReader(text2))
             {
-
                 int lineNumber = 0;
 
                 while (!f1.EndOfStream)
@@ -35,7 +30,6 @@ namespace CSV_compare.line
                         combineText += string.Format("Line {0}\r\n==========================\r\n", lineNumber);
                     }
                 }//End of While
-
 
                 if (!f2.EndOfStream)
                 {
