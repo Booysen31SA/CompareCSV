@@ -6,7 +6,6 @@ using System.Windows.Forms;
 
 namespace CSV_compare
 {
-
     public class PleaseWait : IDisposable
     {
         private readonly Form mSplash = new LoadingScreen();
@@ -25,14 +24,14 @@ namespace CSV_compare
 
         public void Dispose()
         {
-
             mSplash.Invoke(new MethodInvoker(StopThread));
-
         }
+
         private void StopThread()
         {
             mSplash.Close();
         }
+
         private void WorkerThread()
         {
             mSplash.StartPosition = FormStartPosition.CenterScreen;

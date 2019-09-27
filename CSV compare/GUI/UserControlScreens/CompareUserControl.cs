@@ -84,7 +84,5 @@ namespace CSV_compare.GUI.UserControlScreens
             ViewFileForm form = new ViewFileForm();
             form.Show();
         }
-
-
     }
 }

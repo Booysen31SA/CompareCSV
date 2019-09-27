@@ -57,10 +57,10 @@ namespace CSV_compare
             }
             else
             {
-
                 StartUpUserControl.Instance.BringToFront();
             }
         }
+
         private void Compare()
         {
             if (!ContentPanel.Controls.Contains(CompareUserControl.Instance))
@@ -71,10 +71,8 @@ namespace CSV_compare
             }
             else
             {
-
                 CompareUserControl.Instance.BringToFront();
             }
         }
-
     }
 }

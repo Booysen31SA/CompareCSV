@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CSV_compare.SaveDiaglog
 {
-    class SaveFile
+    internal class SaveFile
     {
         public String SaveFileDialog(String fileName)
         {

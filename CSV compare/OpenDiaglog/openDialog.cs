@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace CSV_compare.OpenDiaglog
 {
-    class openDialog
+    internal class openDialog
     {
         public String OpenFileDialogForm()
         {

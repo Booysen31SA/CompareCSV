@@ -6,6 +6,7 @@ namespace CSV_compare.GUI.UserControlScreens
     public partial class StartUpUserControl : UserControl
     {
         private static StartUpUserControl _instance;
+
         public StartUpUserControl()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace CSV_compare.GUI.UserControlScreens
 
         private void StartUpUserControl_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

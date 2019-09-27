@@ -4,7 +4,7 @@ using System.IO;
 
 namespace CSV_compare.Compare
 {
-    class CompareText
+    internal class CompareText
     {
         public string compareText(String text1, String text2)
         {
@@ -13,7 +13,6 @@ namespace CSV_compare.Compare
             using (StreamReader f1 = new StreamReader(text1))
             using (StreamReader f2 = new StreamReader(text2))
             {
-
                 var differences = new List<string>();
 
                 int lineNumber = 0;
@@ -41,7 +40,6 @@ namespace CSV_compare.Compare
                         combineText += string.Format("No differences Found on Line {0}\r\n===========================\r\n", lineNumber);
                     }
                 }//End of While
-
 
                 if (!f2.EndOfStream)
                 {

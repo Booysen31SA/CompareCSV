@@ -16,7 +16,6 @@ namespace CSV_compare.GUI.ViewFile
         private String OldText = "";
         private readonly md5Hash getMd5hash = new md5Hash();
 
-
         public ViewFileForm()
         {
             InitializeComponent();
@@ -74,11 +73,12 @@ namespace CSV_compare.GUI.ViewFile
             }
         }
 
- private void Save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             EditAndSave();
             Save.BackColor = Color.LawnGreen;
         }
+
         private void EditAndSave()
         {
             SaveFile saveFile = new SaveFile();
@@ -94,7 +94,6 @@ namespace CSV_compare.GUI.ViewFile
                 File.WriteAllText(fileLocation, fileText.Text);
             }
         }
-
 
         private void Find_Click(object sender, EventArgs e)
         {
@@ -140,7 +139,6 @@ namespace CSV_compare.GUI.ViewFile
                 else if (ReplaceText.Text.Length <= 0)
                 {
                     MessageBox.Show("Please Enter a value in the replace TextBox");
-
                 }
                 else
                 {

@@ -2,7 +2,7 @@
 
 namespace CSV_compare.MD5
 {
-    class md5Hash
+    internal class md5Hash
     {
         public string CreateMD5(string input)
         {
