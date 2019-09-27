@@ -74,7 +74,11 @@ namespace CSV_compare.GUI.ViewFile
             }
         }
 
-
+ private void Save_Click(object sender, EventArgs e)
+        {
+            EditAndSave();
+            Save.BackColor = Color.LawnGreen;
+        }
         private void EditAndSave()
         {
             SaveFile saveFile = new SaveFile();
@@ -82,7 +86,7 @@ namespace CSV_compare.GUI.ViewFile
             String md5 = getMd5hash.CreateMD5(fileText.Text);
             if (OldText == md5)
             {
-                MessageBox.Show("Nothing has Changed", "Nothing has Changed");
+                MessageBox.Show("No changes were detected, Nothing has Changed", "Nothing has Changed");
             }
             else
             {
@@ -91,11 +95,6 @@ namespace CSV_compare.GUI.ViewFile
             }
         }
 
-        private void Save_Click(object sender, EventArgs e)
-        {
-            EditAndSave();
-            Save.BackColor = Color.LawnGreen;
-        }
 
         private void Find_Click(object sender, EventArgs e)
         {

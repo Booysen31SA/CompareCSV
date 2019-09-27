@@ -44,6 +44,7 @@ namespace CSV_compare
             CompareUserControl.Instance.ViewFileTwo.Enabled = true;
             CompareUserControl.Instance.ViewFileTwo.Visible = true;
             SetFilePathTwo = FileLocationTwo.Text;
+            Compare();
         }
 
         private void startUp()
