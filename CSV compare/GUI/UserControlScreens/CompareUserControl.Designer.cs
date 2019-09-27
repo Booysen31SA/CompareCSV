@@ -47,7 +47,7 @@
             // 
             // ViewFileTwo
             // 
-            this.ViewFileTwo.Location = new System.Drawing.Point(314, 20);
+            this.ViewFileTwo.Location = new System.Drawing.Point(272, 20);
             this.ViewFileTwo.Name = "ViewFileTwo";
             this.ViewFileTwo.Size = new System.Drawing.Size(83, 23);
             this.ViewFileTwo.TabIndex = 19;
@@ -56,7 +56,7 @@
             // 
             // ViewFileOne
             // 
-            this.ViewFileOne.Location = new System.Drawing.Point(225, 20);
+            this.ViewFileOne.Location = new System.Drawing.Point(183, 20);
             this.ViewFileOne.Name = "ViewFileOne";
             this.ViewFileOne.Size = new System.Drawing.Size(83, 23);
             this.ViewFileOne.TabIndex = 18;
